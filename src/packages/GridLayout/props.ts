@@ -39,6 +39,12 @@ export const layoutProps = {
       return [10, 10]
     }
   },
+  placeholderHeight: {
+    type: Number,
+    default: () => {
+      return 0
+    }
+  },
   /**
    * 栅格中的元素是否可拖拽
    */

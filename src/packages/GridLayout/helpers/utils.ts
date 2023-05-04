@@ -425,6 +425,7 @@ type eventBusType = typeof eventBus
 export const eventBusKey: InjectionKey<eventBusType> = Symbol('eventBus')
 export const parentRootKey: InjectionKey<any> = Symbol('parentRoot')
 export const isDraggableKey: InjectionKey<Ref<boolean>> = Symbol('isDraggable')
+export const placeholderHeightKey: InjectionKey<Ref<number>> = Symbol('placeholderHeight')
 export const isResizableKey: InjectionKey<Ref<boolean>> = Symbol('isResizable')
 export const rowHeightKey: InjectionKey<Ref<number>> = Symbol('rowHeight')
 export const maxRowsKey: InjectionKey<Ref<number>> = Symbol('maxRows')

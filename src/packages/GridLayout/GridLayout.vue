@@ -5,12 +5,15 @@
       v-show="isDragging"
       ref="gridItem"
       class="vue-grid-placeholder"
+      :isResizable="false"
       :x="placeholder.x"
       :y="placeholder.y"
       :w="placeholder.w"
-      :h="placeholder.h"
+      :h="props.placeholderHeight || placeholder.h"
       :i="placeholder.i"
-    />
+    >
+
+    </GridItem>
   </div>
 </template>
 <script lang="ts" setup>
@@ -26,6 +29,7 @@ import {
   eventBusKey,
   parentRootKey,
   isDraggableKey,
+  placeholderHeightKey,
   isResizableKey,
   rowHeightKey,
   maxRowsKey,
@@ -71,6 +75,7 @@ const layoutContainer = ref(null)
 
 provide(eventBusKey, eventBus)
 provide(parentRootKey, layoutContainer)
+provide(placeholderHeightKey, toRef(props, 'placeholderHeight'))
 provide(isDraggableKey, toRef(props, 'isDraggable'))
 provide(isResizableKey, toRef(props, 'isResizable'))
 provide(isMirroredKey, toRef(props, 'isMirrored'))
